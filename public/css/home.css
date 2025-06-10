@@ -1,0 +1,26 @@
+.layanan-icon {
+            font-size: 2.5rem;
+            color: #00B2B2;
+            margin-bottom: 10px;
+        }
+        .card-layanan, .card-artikel {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-layanan:hover, .card-artikel:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,178,178,0.15);
+        }
+        .satu, .dua, .tiga {
+            background-color: #5CB85C;
+            color: white;
+            border: none;
+        }
+        .satu:hover, .dua:hover, .tiga:hover {
+            background: linear-gradient(90deg, #5CB85C 60%, #00B2B2 100%);
+            color: #fff;
+        }
+        .card-body {
+            background-color: #F5F5F5;
+        }
+        
+        
