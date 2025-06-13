@@ -1,6 +1,6 @@
-
-<?php include '../../layout/header.php' ?>
+<?php include '../../layout/header.php' ;?>
 <link rel="stylesheet" href="../../public/css/home.css">
+
 
 
 <!-- banner utama -->
@@ -51,7 +51,7 @@
                     </div>
                     <h5 class="card-title mt-2">Tanya Dokter 24 Jam</h5>
                     <p class="card-text">Akses dokter kapan saja via chat, cepat dan praktis tanpa harus ke klinik. Jawaban langsung dari ahlinya.</p>
-                    <a href="#" class="btn btn-outline-primary mt-2">Tanya Sekarang</a>
+                    <a href="dokter.php" class="btn btn-outline-primary mt-2">Tanya Sekarang</a>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@ $artikels = [
         'title' => 'Makanan Sehat untuk Meningkatkan Imunitas',
         'desc' => 'Kenali berbagai jenis makanan alami yang bisa membantu tubuh Anda tetap kuat dan tidak mudah sakit.',
         'link' => '#',
-        'class' => 'dua'   
+        'class' => 'dua'
     ],
     [
         'img' => '../../public/img/vaksin.jpeg',
@@ -92,16 +92,16 @@ $artikels = [
     <h2 class="text-center mb-4 fw-bold">Artikel Terbaru</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <?php foreach ($artikels as $artikel): ?>
-        <div class="col">
-            <div class="card card-artikel h-100 border-0 shadow-sm">
-                <img src="<?= htmlspecialchars($artikel['img']) ?>" class="card-img-top" alt="<?= htmlspecialchars($artikel['alt']) ?>" style="height:200px;object-fit:cover;">
-                <div class="card-body">
-                    <h5 class="card-title"><?= htmlspecialchars($artikel['title']) ?></h5>
-                    <p class="card-text"><?= htmlspecialchars($artikel['desc']) ?></p>
-                    <a href="<?= htmlspecialchars($artikel['link']) ?>" class="btn <?= htmlspecialchars($artikel['class'])?>">Baca Selengkapnya <i class="bi bi-chevron-right"></i></a>
+            <div class="col">
+                <div class="card card-artikel h-100 border-0 shadow-sm">
+                    <img src="<?= htmlspecialchars($artikel['img']) ?>" class="card-img-top" alt="<?= htmlspecialchars($artikel['alt']) ?>" style="height:200px;object-fit:cover;">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= htmlspecialchars($artikel['title']) ?></h5>
+                        <p class="card-text"><?= htmlspecialchars($artikel['desc']) ?></p>
+                        <a href="<?= htmlspecialchars($artikel['link']) ?>" class="btn <?= htmlspecialchars($artikel['class']) ?>">Baca Selengkapnya <i class="bi bi-chevron-right"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php endforeach; ?>
     </div>
 </div>
@@ -122,17 +122,17 @@ $artikels = [
                 ['text' => 'Sudah coba beberapa platform kesehatan, tapi Zona Sehat yang paling saya percaya.', 'name' => 'Almira', 'city' => 'Surabaya'],
             ];
             foreach ($testimonis as $i => $t): ?>
-            <div class="carousel-item<?= $i === 0 ? ' active' : '' ?>">
-                <div class="d-flex justify-content-center">
-                    <div class="card border-0 shadow-sm" style="max-width: 500px;">
-                        <div class="card-body text-center">
-                            <i class="bi bi-chat-quote fs-1 text-info mb-3"></i>
-                            <p class="card-text fst-italic">"<?= htmlspecialchars($t['text']) ?>"</p>
-                            <h6 class="card-subtitle mb-2 text-muted">- <?= htmlspecialchars($t['name']) ?>, <?= htmlspecialchars($t['city']) ?></h6>
+                <div class="carousel-item<?= $i === 0 ? ' active' : '' ?>">
+                    <div class="d-flex justify-content-center">
+                        <div class="card border-0 shadow-sm" style="max-width: 500px;">
+                            <div class="card-body text-center">
+                                <i class="bi bi-chat-quote fs-1 text-info mb-3"></i>
+                                <p class="card-text fst-italic">"<?= htmlspecialchars($t['text']) ?>"</p>
+                                <h6 class="card-subtitle mb-2 text-muted">- <?= htmlspecialchars($t['name']) ?>, <?= htmlspecialchars($t['city']) ?></h6>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#testimoniCarousel" data-bs-slide="prev">
@@ -148,4 +148,3 @@ $artikels = [
 <!-- akhir testimoni pasien -->
 
 <?php include '../../layout/footer.php' ?>
-
