@@ -1,7 +1,10 @@
-<?php include '../../layout/header.php' ;?>
+<?php
+include '../../layout/header.php';
+require '../../admin/php/conection.php';
+?>
+
+
 <link rel="stylesheet" href="../../public/css/home.css">
-
-
 
 <!-- banner utama -->
 <div class="container mt-5">
@@ -9,54 +12,38 @@
         <div class="container-fluid py-5">
             <h1 class="display-4 fw-bold mb-3">Zona Sehat: Menuju Hidup Lebih Sehat!</h1>
             <p class="col-md-8 fs-5 mb-4">Temukan tips kesehatan, layanan konsultasi, dan informasi terpercaya untuk mendukung gaya hidup sehat Anda bersama Zona Sehat.</p>
-            <button class="btn btn-light btn-lg px-4 shadow" type="button">Jelajahi Zona Sehat <i class="bi bi-arrow-right-circle"></i></button>
         </div>
     </div>
 </div>
 <!-- akhir banner utama -->
 
 <!-- layanan kami -->
+<?php
+$layanan = query("SELECT * FROM healty");
+?>
 <div class="container mb-5" id="layanan">
     <h2 class="text-center mb-4 fw-bold">Layanan Kami</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-            <div class="card card-layanan h-100 text-center border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="layanan-icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
-                        <i class="bi bi-chat-dots"></i>
+        <?php foreach ($layanan as $l): ?>
+            <div class="col">
+                <div class="card card-layanan h-100 text-center border-0 shadow-sm">
+                    <div class="card-body">
+                        <div class="layanan-icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
+                            <i class="bi bi-activity"></i>
+                        </div>
+                        <h5 class="card-title mt-2"><?= htmlspecialchars($l['nama_layanan']) ?></h5>
+                        <p class="card-text"><?= htmlspecialchars($l['deskripsi']) ?></p>
+                        <p class="fw-bold text-primary">Rp<?= number_format($l['harga']) ?></p>
                     </div>
-                    <h5 class="card-title mt-2">Konsultasi Kesehatan</h5>
-                    <p class="card-text">Konsultasi gratis dengan dokter profesional, siap membantu keluhan kesehatan Anda secara online dan rahasia.</p>
-                    <a href="#" class="btn btn-outline-info mt-2">Mulai Konsultasi</a>
+                    <div class="card-footer bg-white border-0">
+                        <a href="dokter.php" class="btn btn-outline-info mt-2">Lihat Detail</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="card card-layanan h-100 text-center border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="layanan-icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
-                        <i class="bi bi-journal-medical"></i>
-                    </div>
-                    <h5 class="card-title mt-2">Informasi Kesehatan</h5>
-                    <p class="card-text">Artikel kesehatan terbaru, terpercaya, dan mudah dipahami. Diperbarui oleh tim dokter dan ahli medis.</p>
-                    <a href="#artikel" class="btn btn-outline-success mt-2">Lihat Artikel</a>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card card-layanan h-100 text-center border-0 shadow-sm">
-                <div class="card-body">
-                    <div class="layanan-icon bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width:70px;height:70px;">
-                        <i class="bi bi-person-video3"></i>
-                    </div>
-                    <h5 class="card-title mt-2">Tanya Dokter 24 Jam</h5>
-                    <p class="card-text">Akses dokter kapan saja via chat, cepat dan praktis tanpa harus ke klinik. Jawaban langsung dari ahlinya.</p>
-                    <a href="dokter.php" class="btn btn-outline-primary mt-2">Tanya Sekarang</a>
-                </div>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
 </div>
+
 <!-- akhir layanan kami -->
 
 <!-- artikel terbaru -->

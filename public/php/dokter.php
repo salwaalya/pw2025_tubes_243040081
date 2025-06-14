@@ -82,7 +82,7 @@
                             <p class="card-text mb-2"><i class="bi bi-calendar-event"></i> <span class="text-muted"><?= htmlspecialchars($d['jadwal']) ?></span></p>
                         </div>
                         <div class="card-footer bg-white border-0 text-center pb-3">
-                            <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4">Lihat Profil</a>
+                            <a href="budi.php" class="btn btn-outline-primary btn-sm rounded-pill px-4">Lihat Profil</a>
                         </div>
                     </div>
                 </div>
